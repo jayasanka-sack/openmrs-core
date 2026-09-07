@@ -77,8 +77,8 @@ if [ -n "${OMRS_DEV_DEBUG_PORT-}" ]; then
 fi
 
 if [ "${OMRS_OTEL_ENABLED:-false}" = "true" ]; then
-  echo "Enabling OpenTelemetry, exporting to ${OTEL_EXPORTER_OTLP_ENDPOINT:-default OTLP endpoint}"
-  CATALINA_OPTS="$CATALINA_OPTS -javaagent:/openmrs/otel/opentelemetry-javaagent.jar"
+  echo "Enabling OpenTelemetry, exporting to ${OTEL_EXPORTER_OTLP_ENDPOINT:-the default OTLP endpoint}"
+  CATALINA_OPTS="$CATALINA_OPTS -javaagent:/openmrs/java-agents/opentelemetry-javaagent.jar"
 fi
 
 cat > $TOMCAT_SETENV_FILE << EOF
